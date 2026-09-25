@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-box {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h3 {
+    margin-top: 0;
+}
+
+button {
+    border: none;
+    padding: 10px 18px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-btn {
+    background: #198754;
+    color: white;
+}
+
+.user-btn {
+    background: #0d6efd;
+    color: white;
+}
+
+.logout-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.incident-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.incident-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #198754;
+}
+
+.incident-card.critical {
+    border-left-color: #dc3545;
+}
+
+.incident-card h2 {
+    margin-top: 0;
+}
+
+.priority {
+    font-weight: bold;
+}
+
+.critical-text {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.normal-text {
+    color: #198754;
+    font-weight: bold;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 16px;
+    background: #212529;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.view-btn:hover {
+    background: #495057;
+}
+
+@media (max-width: 700px) {
+    .incident-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
