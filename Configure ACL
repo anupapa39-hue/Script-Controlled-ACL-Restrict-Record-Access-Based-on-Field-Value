@@ -1,0 +1,24 @@
+# Phase 3 - Configure ACL
+
+## ACL Configuration
+
+Type:
+Record
+
+Operation:
+Read
+
+Decision Type:
+Allow If
+
+Table:
+Incident [incident]
+
+Advanced:
+Enabled
+
+Description:
+Restrict incident record access based on the Priority field value.
+
+Field:
+Priority
