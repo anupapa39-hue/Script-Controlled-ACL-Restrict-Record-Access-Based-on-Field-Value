@@ -1,0 +1,36 @@
+# Phase 5 - Test Cases
+
+## Test Case 1
+User: Admin
+Priority: Critical (1)
+
+Expected:
+Access Allowed
+
+## Test Case 2
+User: Non-admin
+Priority: Critical (1)
+
+Expected:
+Access Denied
+
+## Test Case 3
+User: Non-admin
+Priority: High (2)
+
+Expected:
+Access Allowed
+
+## Test Case 4
+User: Non-admin
+Priority: Moderate (3)
+
+Expected:
+Access Allowed
+
+## Test Case 5
+User: Non-admin
+Priority: Low (4)
+
+Expected:
+Access Allowed
