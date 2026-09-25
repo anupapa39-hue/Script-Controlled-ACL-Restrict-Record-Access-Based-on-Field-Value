@@ -1,0 +1,12 @@
+// Script-Controlled ACL
+// Restrict Incident access based on Priority
+
+if (gs.hasRole('admin')) {
+    answer = true;
+}
+else if (current.priority != '1') {
+    answer = true;
+}
+else {
+    answer = false;
+}
