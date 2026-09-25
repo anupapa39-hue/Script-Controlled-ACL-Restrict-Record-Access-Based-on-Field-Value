@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Script-Controlled ACL</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .admin {
+            background: #198754;
+            color: white;
+        }
+
+        .user {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .logout {
+            background: #dc3545;
+            color: white;
+        }
+
+        .incident-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .incident-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .critical {
+            border-left: 6px solid red;
+        }
+
+        .normal {
+            border-left: 6px solid green;
+        }
+
+        .view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Script-Controlled ACL</h1>
+
+    <div class="login-box">
+
+        <h3>Select User Role</h3>
+
+        <form action="/login" method="POST">
+
+            <button class="admin" type="submit" name="role" value="admin">
+                Login as Admin
+            </button>
+
+            <button class="user" type="submit" name="role" value="user">
+                Login as Normal User
+            </button>
+
+        </form>
+
+        {% if session.get('role') %}
+            <p>
+                Current Role:
+                <strong>{{ session.get('role') }}</strong>
+            </p>
+
+            <a href="/logout">
+                <button class="logout">Logout</button>
+            </a>
+        {% endif %}
+
+    </div>
+
+
+    <div class="incident-grid">
+
+        {% for incident in incidents %}
+
+        <div class="incident-card
+            {% if incident.priority == '1' %}
+                critical
+            {% else %}
+                normal
+            {% endif %}
+        ">
+
+            <h2>{{ incident.number }}</h2>
+
+            <p>
+                <strong>Description:</strong>
+                {{ incident.short_description }}
+            </p>
+
+            <p>
+                <strong>Priority:</strong>
+                {{ incident.priority_name }}
+            </p>
+
+            {% if incident.priority == '1' %}
+                <p class="status">🔴 Critical Incident</p>
+            {% else %}
+                <p class="status">🟢 Normal Incident</p>
+            {% endif %}
+
+            <a class="view-btn"
+               href="/incident/{{ incident.id }}">
+                View Incident
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
