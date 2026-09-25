@@ -1,0 +1,35 @@
+# Phase 8 - Project Summary
+
+## Project
+Script-Controlled ACL – Restrict Record Access Based on Field Value
+
+## Platform
+ServiceNow
+
+## Table
+Incident
+
+## Operation
+Read
+
+## Field
+Priority
+
+## Security Logic
+
+Critical incidents are restricted to administrators.
+
+Non-admin users can access incidents when the Priority
+is not Critical.
+
+## Technologies Used
+
+- ServiceNow
+- ACL
+- JavaScript
+- Role-based access control
+
+## Outcome
+
+The project demonstrates how a Script-Controlled ACL can
+dynamically control record access based on a field value.
