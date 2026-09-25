@@ -1,0 +1,21 @@
+# Phase 1 - Project Setup
+
+## Project Title
+Script-Controlled ACL – Restrict Record Access Based on Field Value
+
+## Platform
+ServiceNow
+
+## Objective
+To restrict access to Incident records based on the value of
+the Priority field.
+
+## Requirement
+Critical incidents should be accessible only to administrators.
+Other users should not be able to read Critical incidents.
+
+## Table
+Incident [incident]
+
+## Field Used
+Priority
