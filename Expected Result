@@ -1,0 +1,13 @@
+# Phase 6 - Expected Result
+
+| User Type | Priority | Access |
+|-----------|----------|--------|
+| Admin | Critical | Allowed |
+| Admin | High | Allowed |
+| Non-admin | Critical | Denied |
+| Non-admin | High | Allowed |
+| Non-admin | Moderate | Allowed |
+| Non-admin | Low | Allowed |
+
+The ACL successfully restricts Critical Incident records
+for non-admin users.
