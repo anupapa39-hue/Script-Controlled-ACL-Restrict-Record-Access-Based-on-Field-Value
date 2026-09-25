@@ -1,0 +1,19 @@
+# Phase 7 - Security Validation
+
+## Validation Steps
+
+1. Login as an administrator.
+2. Open an Incident with Priority = Critical.
+3. Verify that the record is accessible.
+
+4. Login as a non-admin user.
+5. Try to access the same Critical Incident.
+6. Verify that access is denied.
+
+7. Open a non-Critical Incident as a non-admin user.
+8. Verify that the record is accessible.
+
+## Security Rule
+
+Only administrators can read Critical Incident records.
+Other users can read non-Critical Incident records.
