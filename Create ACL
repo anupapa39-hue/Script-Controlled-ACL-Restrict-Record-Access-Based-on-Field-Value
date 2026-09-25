@@ -1,0 +1,15 @@
+# Phase 2 - Create ACL
+
+1. Login to ServiceNow.
+2. Navigate to:
+   System Security → Access Control (ACL)
+3. Click New.
+4. Select Type = Record.
+5. Select Operation = Read.
+6. Select Table = Incident [incident].
+7. Enable Advanced.
+8. Enter a suitable description.
+
+Description:
+
+Restrict incident record access based on the Priority field value.
